@@ -482,18 +482,27 @@ G:\Git\Project01>docker restart 9642b2755401
 > Documented above in this README file
 
 ●	Step 5: Push the codebase for the sample application to your GitHub repository (create a new one for this part)
-
+Pushed codebase to new repo at https://github.com/Smurfie07/myDevOps-reUpload-.git
 
 
 ##Part 3: Docker Volumes
 
 ●	Create a new Docker volume named "my_volume". (2 marks)
+Created as G:\DockerDesktop\docker-images\myVolume
+
 ●	Create a new Docker container using the "nginx" image and mount the "my_volume" volume to the container's "/usr/share/nginx/html" directory. (4 marks)
+![image](https://github.com/Smurfie07/myDevOps/assets/42376819/8bf77be1-a519-4b00-be81-570c358f29fb)
+
 ●	Verify that the "nginx" default page is accessible on your host machine at http://localhost:8080. (2 marks)
+
 ●	Create a new file named "index.html" on your host machine and add some text to it. (2 marks)
+
 ●	Copy the "index.html" file from your host machine to the "my_volume" volume using the "docker cp" command. (4 marks)
+
 ●	Verify that the "index.html" file is accessible on your host machine at http://localhost:8080. (2 marks)
+
 ●	Stop and remove the container. (2 marks)
+
 ●	Create a new Docker container using the "httpd" image and mount the "my_volume" volume to the container's "/usr/local/apache2/htdocs" directory. (4 marks)
 ●	Verify that the "httpd" default page is accessible on your host machine at http://localhost:8081. (2 marks)
 ●	Create a new file named "about.html" on your host machine and add some text to it. (2 marks)
