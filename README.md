@@ -463,6 +463,7 @@ CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS        
 ![image](https://github.com/Smurfie07/myDevOps/assets/42376819/67d39425-1989-4b1a-8633-030fedf6ba52)
 
 ■	'docker attach' command to attach local standard input, output, and error streams to a running container
+![image](https://github.com/Smurfie07/myDevOps/assets/42376819/b90a81c3-1207-41d3-8761-2ae04d61576a)
 
 ■	'docker port' command to display the public-facing port that a container is listening on
 G:\Git\Project01>docker port 9642b2755401
