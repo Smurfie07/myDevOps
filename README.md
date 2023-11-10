@@ -396,17 +396,74 @@ G:\Git\Project01>docker exec 9642b2755401 python -V
 Python 3.12.0
 
 ■	'docker attach' command to attach to a running container
+G:\DockerDesktop\docker-images>docker attach 45056dd1617c9964c4f6a244da19423e3831a06e06ea0f60325cfc2cf716d1d4
+INFO:     172.17.0.1:57988 - "GET /count HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57996 - "GET /count HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58008 - "GET /count HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58008 - "GET /count HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58012 - "GET /docs HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58012 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58020 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:58024 - "GET / HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1]
 
 ■	'docker commit' command to create a new image from a container
+G:\DockerDesktop\docker-images>docker commit -m "testNewImage" 45056dd1617c msurj/newrunimage:v1
+sha256:549c8530610ae86d5ff5f27a23fd84c340433f8634430cd00ebd404b2ff9d2c6
+
+G:\DockerDesktop\docker-images>docker images
+REPOSITORY          TAG       IMAGE ID       CREATED          SIZE
+msurj/newrunimage   v1        549c8530610a   14 seconds ago   1.05GB
+fastapi-app         latest    bd596fbc18ff   6 days ago       1.05GB
+msurj/fastapi-app   041123    bd596fbc18ff   6 days ago       1.05GB
+
 ■	'docker cp' command to copy files/folders between the container and the host
+![image](https://github.com/Smurfie07/myDevOps/assets/42376819/9dd8f099-4857-46c1-84fc-60c421a6a73a)
+
 ■	'docker stats' command to view the resource usage of containers
+CONTAINER ID   NAME                    CPU %     MEM USAGE / LIMIT    MEM %     NET I/O           BLOCK I/O   PIDS
+45056dd1617c   fastapi-app-container   0.15%     33.5MiB / 6.065GiB   0.54%     10.9kB / 6.18kB   0B / 0B     2
+
 ■	'docker top' command to view the running processes inside a container
+G:\DockerDesktop\docker-images>docker top 45056dd1617c
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                1143                1122                0                   20:45               ?                   00:00:01            python main.py
+
 ■	'docker start' command to start a stopped container
+G:\DockerDesktop\docker-images>docker start 45056dd1617c
+45056dd1617c
+
 ■	'docker pause' command to pause a running container
+G:\DockerDesktop\docker-images>docker pause 45056dd1617c
+45056dd1617c
+
+G:\DockerDesktop\docker-images>docker ps
+CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS                  PORTS                    NAMES
+45056dd1617c   bd596fbc18ff   "python main.py"   11 minutes ago   Up 2 minutes (Paused)   0.0.0.0:2020->2020/tcp   fastapi-app-container
+
 ■	'docker unpause' command to unpause a paused container
+G:\DockerDesktop\docker-images>docker unpause 45056dd1617c
+45056dd1617c
+
+G:\DockerDesktop\docker-images>docker ps
+CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS         PORTS                    NAMES
+45056dd1617c   bd596fbc18ff   "python main.py"   13 minutes ago   Up 4 minutes   0.0.0.0:2020->2020/tcp   fastapi-app-container
+
 ■	'docker rename' command to rename a container
+G:\DockerDesktop\docker-images>docker rename 45056dd1617c newFastApi-app
+
+G:\DockerDesktop\docker-images>docker ps
+CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS         PORTS                    NAMES
+45056dd1617c   bd596fbc18ff   "python main.py"   14 minutes ago   Up 5 minutes   0.0.0.0:2020->2020/tcp   newFastApi-app
+
 ■	'docker wait' command to wait for a container to exit and then display its exit code
+![image](https://github.com/Smurfie07/myDevOps/assets/42376819/67d39425-1989-4b1a-8633-030fedf6ba52)
+
 ■	'docker attach' command to attach local standard input, output, and error streams to a running container
+
 ■	'docker port' command to display the public-facing port that a container is listening on
 G:\Git\Project01>docker port 9642b2755401
 2020/tcp -> 0.0.0.0:2020
