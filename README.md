@@ -491,13 +491,19 @@ Pushed codebase to new repo at https://github.com/Smurfie07/myDevOps-reUpload-.g
 Created as G:\DockerDesktop\docker-images\myVolume
 
 ●	Create a new Docker container using the "nginx" image and mount the "my_volume" volume to the container's "/usr/share/nginx/html" directory. (4 marks)
-![image](https://github.com/Smurfie07/myDevOps/assets/42376819/8bf77be1-a519-4b00-be81-570c358f29fb)
+G:\Git\docker-volume>docker run --name nginxVol-Container -d -p 8080:8080 -v G:\DockerDesktop\docker-images\myVolume:/usr/share/nginx/html c20060033e06f882b0fbe2db7d974d72e0887a3be5e554efdb0dcf8d53512647
+112158b37b1d86f5ecf9cf4553675bebf4910e5499a1307b6ff0b7a8bda997de
+![image](https://github.com/Smurfie07/myDevOps/assets/42376819/146f9447-8dc5-4452-8332-4b88d70ce2d8)
 
 ●	Verify that the "nginx" default page is accessible on your host machine at http://localhost:8080. (2 marks)
+![image](https://github.com/Smurfie07/myDevOps/assets/42376819/e385b403-de3a-4a05-8464-4f9d7b8e116b)
 
 ●	Create a new file named "index.html" on your host machine and add some text to it. (2 marks)
+![image](https://github.com/Smurfie07/myDevOps/assets/42376819/cbe1be5f-ee14-401d-8f2e-baea05cb20da)
 
 ●	Copy the "index.html" file from your host machine to the "my_volume" volume using the "docker cp" command. (4 marks)
+G:\Git\docker-volume>docker cp 112158b37b1d:/usr/share/nginx/html/index.html G:\DockerDesktop\docker-images\myVolume
+Successfully copied 2.05kB to G:\DockerDesktop\docker-images\myVolume
 
 ●	Verify that the "index.html" file is accessible on your host machine at http://localhost:8080. (2 marks)
 
