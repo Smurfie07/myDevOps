@@ -1,6 +1,6 @@
 # Assignment 1
 
-##Part 1: Docker file Creation, GitHub and Docker Hub Integration
+## Part 1: Docker file Creation, GitHub and Docker Hub Integration
 
 ●	Step 1 (5 marks): Identify a Sample Application
 
@@ -113,7 +113,7 @@ Commands used: Git init / add / status / commit / push [origin/branch] / pull [o
 
 
 
-##Part 2: Docker Containers with Commands
+## Part 2: Docker Containers with Commands
 
 ●	Step 1 (5 marks): Using the docker image from Part 1
 
@@ -485,7 +485,7 @@ G:\Git\Project01>docker restart 9642b2755401
 Pushed codebase to new repo at https://github.com/Smurfie07/myDevOps-reUpload-.git
 
 
-##Part 3: Docker Volumes
+## Part 3: Docker Volumes
 
 ●	Create a new Docker volume named "my_volume". (2 marks)
 Created as G:\DockerDesktop\docker-images\myVolume
